@@ -2,6 +2,15 @@ import { ThemeProvider, Box } from "@mui/system"
 import { Header } from "./components/Header"
 import { Layout } from "./components/Layout"
 import { darkTheme } from "./config/theme"
+import { Route, Routes } from "react-router-dom"
+
+const Home = () => {
+  return <div>Home</div>
+}
+
+const About = () => {
+  return <div>About</div>
+}
 
 export default function App() {
   return (
@@ -19,7 +28,10 @@ export default function App() {
           }}
         />
         <Layout>
-          <h1>hello world</h1>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
         </Layout>
       </Box>
     </ThemeProvider>
