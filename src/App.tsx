@@ -28,6 +28,8 @@ export default function App() {
             <Route path="/categories" element={<ListCategory />} />
             <Route path="/categories/create" element={<CreateCategory />} />
             <Route path="/categories/edit/:id" element={<EditCategory />} />
+
+            <Route path="*" element={<div>Not Found</div>} />
           </Routes>
         </Layout>
       </Box>
