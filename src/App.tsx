@@ -3,14 +3,9 @@ import { Header } from "./components/Header"
 import { Layout } from "./components/Layout"
 import { darkTheme } from "./config/theme"
 import { Route, Routes } from "react-router-dom"
-
-const Home = () => {
-  return <div>Home</div>
-}
-
-const About = () => {
-  return <div>About</div>
-}
+import { ListCategory } from "./features/categories/ListCategory"
+import { CreateCategory } from "./features/categories/CreateCategory"
+import { EditCategory } from "./features/categories/EditCategory"
 
 export default function App() {
   return (
@@ -29,8 +24,10 @@ export default function App() {
         />
         <Layout>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/" element={<ListCategory />} />
+            <Route path="/categories" element={<ListCategory />} />
+            <Route path="/categories/create" element={<CreateCategory />} />
+            <Route path="/categories/edit/:id" element={<EditCategory />} />
           </Routes>
         </Layout>
       </Box>
