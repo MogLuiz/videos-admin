@@ -11,11 +11,11 @@ interface Category {
 }
 
 export interface CategoryState {
-  categories: Category[]
+  data: Category[]
 }
 
 export const initalState: CategoryState = {
-  categories: [
+  data: [
     {
       id: "234234234",
       name: "Test",
@@ -33,7 +33,7 @@ export const categoriesSlice = createSlice({
   initialState: initalState,
   reducers: {
     createCategory: (state, action) => {
-      state.categories.push(action.payload)
+      state.data.push(action.payload)
     },
   },
 })
